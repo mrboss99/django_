@@ -1,0 +1,18 @@
+
+{%  block content %}
+<h1>  Local Libary Home  </h1>
+
+
+    <p>  Welcom to <em> local library</em>, a very basic Django website </p>
+<h2>Dynamic content </h2>
+
+<p>The library has the flloowing record counts:</p>
+    <ul>
+        <li><strong>Books:           </strong> {{ num_books }}              </li>
+        <li><strong>copies:          </strong> {{ num_instances }}          </li>
+        <li><strong>copies available:</strong> {{ num_instances_available }}</li>
+        <li><strong>Authors:         </strong> {{ num_authors }}            </li>
+
+    </ul>
+    <li><a href="/admin/">Admin P    age</a></li>
+{% endblock %}
