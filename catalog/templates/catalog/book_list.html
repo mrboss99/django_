@@ -1,0 +1,14 @@
+{% extand "base_generic.html" %}
+
+<h1>Book List </h1>
+
+{% if book_list %}
+    {% for book in book_list %}
+    <ul>
+        <a href="{{book.get_absolute_url }}"> {{ bool.title }}</a>({{ book.author }})
+
+    </ul>
+    {% endfor %}
+{% else %}
+    <p> There are no book in library</p>
+{% endif %}

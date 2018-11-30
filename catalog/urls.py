@@ -1,8 +1,12 @@
-from django.urls import path
 from django.conf.urls import url
+from django.urls import path
+from . import views
 
-from catalog import views
 
 urlpatterns = [
-    path('', views.Index.as_view(), name='index')
+    path('', views.Index.as_view(), name='index'),
+    path('books/', views.BookListView.as_view(), name = 'books'),
+    path('book/(?p<pk>\d+', views.BoolDetailView.as_view(), name = 'book-detail'),
+
+
 ]

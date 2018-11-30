@@ -16,8 +16,15 @@ class Index(generic.TemplateView):
         context['num_authors '] =Author.objects.count()
 
 
+class BookListView(generic.ListView):
+    model = Book
+    template_name = "catalog/book_list.html"
 
 
+class BoolDetailView(generic.DeleteView):
+    model = Book
+
+    template_name = "catalog/book_detail.html"
 
 
 
