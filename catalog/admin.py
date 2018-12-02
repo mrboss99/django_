@@ -23,3 +23,15 @@ class AuthorAdmin(admin.ModelAdmin):
     list_filter = ('date_of_birth', 'date_of_death')
     list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death') #tarz namayesh nevisandegan
     field = ['first_name','last_name',('date_of_birth', 'date_of_death')] #field = tarz namyesh baraye ADD nevisance
+
+
+class BookInstanceInline(admin.TabularInline): #milhaym az BookInstance  dar Book estefade konm
+    model = models.BookInstance
+
+
+@admin.register(models.Book)
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'display_gener')
+    inlines = [BookInstanceInline]
+
+

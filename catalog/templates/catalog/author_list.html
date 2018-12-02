@@ -1,0 +1,20 @@
+{% extends "catalog/base_generic.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    {% for author in author_list %}
+        <h1> Author : {{ author.last_name }} </h1>
+        <p> Authors first_name: {{ author.first_name}}</p>
+        <p> date of birth : {{author.date_of_birth }}</p>
+        <p> date of death : {{author.date_of_death }}</p>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
+
+
+</body>
+</html>

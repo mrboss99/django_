@@ -37,6 +37,14 @@ class Book(models.Model):
     def get_absolute_url(self):
         return reverse('book-detail', args=[str(self.id)])
 
+    def display_gener(self):
+        """
+        baraye sakhtane yek string baraye Gener .yek darkhast be display  genere dakhele admin
+
+        """
+        return ', '.join([gener.name for gener in self.gener.all()[:3]])
+
+    display_gener.short_description = "Gener"
 
 class BookInstance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="dadane 'id' be yek ketaab khas ")
